@@ -61,15 +61,15 @@ class OrderController extends Controller
         $paramList = array();
 
         // Create an array having all required parameters for creating checksum.
-        $paramList["MID"] = 'NIFTSt58161086414415';
+        $paramList["MID"] = '';
         $paramList["ORDER_ID"] = $order_id;
         $paramList["CUST_ID"] =  $order_id.'_'.(string)uniqid();
         $paramList["INDUSTRY_TYPE_ID"] = 'Retail';
         $paramList["CHANNEL_ID"] = 'WEB';
         $paramList["TXN_AMOUNT"] = $amount;
-        $paramList["WEBSITE"] = 'WEBSTAGING';
+        $paramList["WEBSITE"] = '';
         $paramList["CALLBACK_URL"] = url('/paytm/callback');
-        $paytm_merchant_key = '8a1KlFx948qY#oYa';
+        $paytm_merchant_key = '';
 
         //Here checksum string will return by getChecksumFromArray() function.
         $checkSum = getChecksumFromArray( $paramList, $paytm_merchant_key );

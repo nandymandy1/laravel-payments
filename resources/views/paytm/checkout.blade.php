@@ -11,13 +11,10 @@
 <br>
 <div class="container">
     <div class="col-lg-offset-4 col-lg-4">
-        <form action="createRequest" method="post">
+        <form action="/paytm/order" method="post">
             @csrf
-                <input type="text" class="form-control" name="purpose" value="test for insta">
-                <input type="text" class="form-control" name="amount" value="1000">
-                <input type="text" class="form-control" name="phone"  value="9999999999">
-                <input type="text" class="form-control" name="username"  value="nandymandy1">
-                <input type="text" class="form-control" name="email" value="mauryanarendra09@gmail.com">
+                <input type="text" class="form-control" name="price" value="1000">
+                <br>
                 <input type="submit" value="submit">
         </form>
     </div>

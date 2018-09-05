@@ -7,12 +7,11 @@ use Illuminate\Http\Request;
 class InstaController extends Controller
 {   
     public function getCheckout(){
-        return view('checkout');
+        return view('insta.checkout');
     }
     
     public function postCheckout(Request $request){
         $ch = curl_init();
-        
         
         curl_setopt($ch, CURLOPT_URL, 'https://test.instamojo.com/api/1.1/payment-requests/');
         curl_setopt($ch, CURLOPT_HEADER, FALSE);
@@ -24,9 +23,9 @@ class InstaController extends Controller
             'amount' =>     $request->amount,
             'phone' =>      $request->phone,
             'buyer_name' => $request->username,
-            'redirect_url' => 'http://pay-insta.com/redirect',
+            'redirect_url' => 'http://pay-insta.com/insta/redirect',
             'send_email' => false,
-            'webhook' => 'http://pay-insta.com/webhook',
+            'webhook' => 'http://pay-insta.com/insta/webhook',
             'send_sms' => false,
             'email' => $request->email,
             'allow_repeated_payments' => false
